@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function08_1.html</title>
+    <script>
+        /*
+        [함수 정의]
+
+            방법1]함수 선언문(유명함수)
+            function 함수명([매개변수1,매개변수2,...]){//var사용불가
+
+                    함수가 할일 구현;
+
+                    [return 변수 혹은 값;]
+                    *return이후의 명령문은 실행이 안됨
+            }
+
+            방법2]함수 표현식(익명함수)
+            var 변수명 = function([매개변수1,매개변수2,...]){
+
+            }
+
+            방법3]즉시 실행함수
+            (function [함수명]([매개변수1,매개변수2,...]){
+
+                함수가 할일 구현;
+
+                [return 변수혹은 값;]
+                *return이후의 명령문은 실행이 안됨
+            })([매개변수1,매개변수2,...])
+        */
+        //함수형식 1]
+        //함수 정의 - 함수선언문
+        function noParamNoReturn(){
+            document.write('================MENU================<br/>');
+            document.write('1. continue 2. End<br/>');
+            document.write('====================================<br/>');
+        }
+        document.write('noParamNoReturn의 자료형 : '+typeof noParamNoReturn+'<br/>');
+        document.write('noParamNoReturn:'+noParamNoReturn+'<br/>');
+        //함수 호출]
+        noParamNoReturn();
+
+        //함수형식 2]
+        //함수 정의 - 함수 표현식
+        /*
+        함수의  시작 주소를 왼쪽의 변수명에 저장
+        변수명을 마치 함수명처럼 사용가능
+        */
+        var yesParamNoReturn = function(start,end){
+            var total = 0;//지역변수
+            for(var i=start;i<=end;i++)
+                total += i;
+            document.write(start+'부터 '+end+'까지 누적 합 :'+total+'<br/>');
+        };
+        document.write('yesParamNoReturn의 자료형 : '+typeof yesParamNoReturn+'<br/>');
+        document.write('yesParamNoReturn:'+yesParamNoReturn+'<br/>');
+        //함수 호출]
+        yesParamNoReturn(1,10);
+        yesParamNoReturn(10,100);
+        /*
+        전역변수 : script태그 안에 선언된 변수로 해당 페이지 어디에서나 사용 가능
+        지역변수 : 함수안에 선언된 변수(매개변수 포함)함수 밖에서 사용시 에러
+        */
+        //document.write('함수안에서 선언된 변수 :'+total+'<br/>');
+        //document.write('함수안에서 선언된 변수 :'+i+'<br/>');
+        //document.write('함수안에서 선언된 변수 :'+start+'<br/>');
+        
+        //함수형식3]
+        var noParamYesReturn = function(){
+            var name = prompt('NAME','');
+            var age = prompt('AGE','20');
+            return 'NAME : '+name+', AGE : '+age;
+            document.write('return 이후 출력문');
+        };
+        //함수 호출]
+        document.write(noParamYesReturn()+'<br/>');
+
+        //함수형식4]
+        function yesParamYesReturn(num1,num2){
+            return num1 > num2? num1:num2;
+        };
+        //함수 호출]
+        document.write('최대값 : '+yesParamYesReturn(1,10)+'<br/>');
+
+        //즉시 실행함수]
+        var plus = (function(num1,num2){return num1+num2})(10,20);
+        document.write('plus의 자료형 : '+typeof plus+'<br/>');//number
+        document.write(plus);//30
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

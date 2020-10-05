@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object08_3.html</title>
+    <script>
+        /*
+        
+        2.생성자함수 사용
+            function 생성자 함수명(){};
+        */
+        var brace = {};//new Object와 같다
+        console.log('brace의 자료형:%s, brace:%s',typeof brace,brace);
+        //속성추가]
+        brace.name = 'Lee';
+        brace.age = 20;
+        console.log(brace);
+        console.log('--------------속성출력--------------');
+        console.log(brace.name);
+        console.log(brace.age);
+        //함수추가
+        brace.print = function(){
+            console.log('--------this의 타입 및 값--------')
+            console.log(typeof this);
+            console.log(this);
+            console.log(this === window);
+            console.log('NAME:%s, AGE:%s',this.name,this.age);
+        };
+
+        brace.print();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
