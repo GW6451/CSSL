@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5_NEW20.html</title>
+</head>
+<body>
+    <fieldset>
+        <legend>HTML5에 새롭게 추가된 태그나 속성들</legend>
+        <h2>텍스트에 하이라이트 효과 주는 태그(mark)</h2>
+        <p>
+            <mark>학교폭력 가해자 임을 인정한 보이그룹 블락비의 멤버 박경</mark>이 출연한 종합편성채널 JTBC 예능 <mark>‘아는 형님’</mark>이 결국 빛을 보지 못하게 됐다.<br/>
+            JTBC 측은 6일 문화일보에 “최근 박경의 논란에 관련해 시청자들의 불편함을 줄이기 위해 해당 회차의 녹화분은<br/>
+            <mark>방송하지 않기로 결정했다</mark>”며 “이번 주에는 임창정, 신봉선, 제시 편이 방송될 예정”이라고 밝혔다.
+        </p>
+        <h2>진행을 표시하는 태그(progress)</h2>
+        <progress value="100" max="200" style="width: 300px;height:30px;"></progress>
+        <h2>자동 완성 태그(datalist)</h2>
+        <label for="keyword">검색어를 입력하세요</label>
+        <input type="search" id="keyword" list="data_list" style="width: 300px;height: 30px;"/>
+        <datalist id="data_list">
+            <option value="코로나"></option>
+            <option value="코로나19"></option>
+            <option value="코로나밴드"></option>
+            <option value="코끼리아저씨"></option>
+            <option value="HTML5"></option>
+            <option value="HYBRID"></option>
+            <option value="NAVER"></option>
+            <option value="NATE"></option>
+        </datalist>
+        <h2>이미지를 그룹화하는 태그(figure)</h2>
+        <figure>
+            <figcaption>자바 이미지1</figcaption>
+            <img src="../Images/JAVA.jpg" alt="첫번째 이미지" style="width: 300px; height: 300;"/>
+        </figure>
+        <figure>
+            <figcaption>자바 이미지2</figcaption>
+            <img src="../Images/JAVA.jpg" alt="두번째 이미지" style="width: 300px; height: 300;"/>
+        </figure>
+        <h2>새롭게 추가된 속성들</h2>
+        <h3>multiple,accept속성</h3>
+        <input type="file" multiple accept="image/png,image/jpeg"/>
+        <h3>autofocus속성</h3>
+        <input type="text" autofocus/>
+        <h3>contenteditable속성</h3>
+        <p contenteditable="true">
+            <mark>학교폭력 가해자 임을 인정한 보이그룹 블락비의 멤버 박경</mark>이 출연한 종합편성채널 JTBC 예능 <mark>‘아는 형님’</mark>이 결국 빛을 보지 못하게 됐다.<br/>
+            JTBC 측은 6일 문화일보에 “최근 박경의 논란에 관련해 시청자들의 불편함을 줄이기 위해 해당 회차의 녹화분은<br/>
+            <mark>방송하지 않기로 결정했다</mark>”며 “이번 주에는 임창정, 신봉선, 제시 편이 방송될 예정”이라고 밝혔다.
+            <span style="background-color: white; border:1px;"></span>
+        </p>
+        <h3>hidden속성</h3>
+        <input type="button" value="버튼" hidden/>
+        <h3>required속성</h3>
+        <form action="https://www.nate.com">
+                <input type="text" name="name" required/>
+                남자 <input type="radio" name="gender" value="남자" required/>
+                여자 <input type="radio" name="gender" value="여자" required/>
+                동의 <input type="checkbox" name="accept" value="yes" required/>
+                <input type="submit" value="확인"/>
+        </form>
+        <h3>placeholder속성</h3>
+        ID <input type="text" placeholder="ID"/>
+        PW <input type = "password" placeholder="PW"/>
+    </fieldset>
+</body>
+</html>

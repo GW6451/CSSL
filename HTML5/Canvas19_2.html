@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas19_2.html</title>
+</head>
+<body>
+    <div>
+        <h2>canvas태그</h2>
+        <!--*캔바스의 가로폭 세로폭은 반드시 속성으로 설정-->
+        <canvas width="200" height="200" id="canvas" style="background-color: blanchedalmond;"></canvas>
+        <script>
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.font = '25 굴림체';
+            ctx.fillStyle = 'white';//채우기 색상 설정
+            
+            //기준선보이기
+            ctx.strokeStyle = 'darkorange';//선 색상 설정
+            ctx.moveTo(50,20);
+            ctx.lineTo(50,180);
+            ctx.stroke();//선긋기
+
+            //그림자 표시를 위한 설정]
+            ctx.shadowColor = 'rgba(255,0,0,0.8)';
+            ctx.shadowOffSetx = 5;
+            ctx.shadowOffSety = 5;
+            ctx.shadowBlur = 7;//최대값 100
+            ctx.textAlign = 'start';
+            ctx.fillText('HTML5_START',70,50);
+
+            ctx.textAlign = 'end';
+            ctx.fillText('HTML5_END',50,80);
+
+            ctx.textAlign = 'center';
+            ctx.fillText('HTML5_CENTER',50,120);
+
+            ctx.textAlign = 'left';
+            ctx.fillText('HTML5_LEFT',50,140);
+
+            ctx.textAlign = 'right';
+            ctx.fillText('HTML5_RIGHT',70,180);
+        </script>
+    </div>
+</body>
+</html>
